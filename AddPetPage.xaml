@@ -1,0 +1,17 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetFeedingTracker.AddPetPage">
+    <StackLayout Padding="10">
+        <Label Margin="0,0,0,30" Text="Добавить нового питомца" FontSize="Large" HorizontalOptions="Center" />
+        <Entry Margin="0,0,0,10" x:Name="PetNameEntry" Placeholder="Введите имя питомца" />
+        <Picker Margin="0,0,0,10" x:Name="PetTypePicker" Title="Выберите тип питомца">
+            <Picker.Items>
+                <x:String>Кошка</x:String>
+                <x:String>Собака</x:String>
+                <x:String>Попугай</x:String>      
+                <x:String>Хомяк</x:String>       
+            </Picker.Items>
+        </Picker>
+        <Button Text="Сохранить" Command="{Binding SavePetCommand}" Margin="30"  HeightRequest="50" WidthRequest="150" />
+    </StackLayout> 
+</ContentPage>

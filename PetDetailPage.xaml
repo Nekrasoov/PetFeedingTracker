@@ -1,0 +1,22 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetFeedingTracker.PetDetailPage">
+
+    <StackLayout Padding="15">
+        <!-- Привязка к свойствам Pet внутри ViewModel -->
+        <Label Text="{Binding Pet.Name}" FontSize="Large" />
+        <Label Text="{Binding Pet.Type}" FontSize="Medium" />
+
+        <!-- Кнопка для добавления кормления -->
+        <Button Margin="15" Text="Добавить кормление" Command="{Binding AddFeedingCommand}" /> 
+
+        <!-- Список кормлений -->
+        <ListView ItemsSource="{Binding Pet.FeedingRecords}">
+            <ListView.ItemTemplate> 
+                <DataTemplate>
+                    <TextCell Text="{Binding Time}" Detail="{Binding Notes}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
